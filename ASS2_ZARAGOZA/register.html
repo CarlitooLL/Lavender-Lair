@@ -1,0 +1,129 @@
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>LL : Register</title>
+<style>
+       body {
+        font-family: "Comic Sans MS", "Lucida Handwriting", cursive;
+        background-image: url('images/background.png');
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+        margin: 0;
+        padding: 0;
+        text-align: center;}
+
+        #logo-container {margin: 20px 0;}
+
+ 
+    #navbar {
+        background-color: #764DE2;
+        overflow: hidden;
+        padding: 10px 0;
+        display: inline-block;
+        border-radius: 30px;
+        text-align: center;
+        width: 90%;
+        box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);}
+
+        .nav-link {
+        display: inline-block;
+        color: #FEFDE9;
+        text-align: center;
+        padding: 10px 120px;
+        text-decoration: none;
+        font-size: 18px;}
+
+
+    .nav-link:hover {
+        background-color: rgba(0, 86, 179, 0.9);
+        color: #ffffff;
+        border-radius: 20px;}
+
+      #register-container {
+        width: 100%;
+        max-width: 600px;
+        margin: 50px auto;
+        padding: 20px;
+        background-color: rgba(255, 255, 255, 0.9);
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        border-radius: 8px;}
+
+      h2 {
+        text-align: center;
+        color: #333;
+        font-family: "Comic Sans MS", "Lucida Handwriting", cursive;
+        font-size: 24px;}
+
+
+    label {
+        display: block;
+        margin-top: 10px;
+        color: #495057;
+        font-weight: bold;
+        font-family: "Comic Sans MS", "Lucida Handwriting", cursive;}
+
+       input[type="text"], input[type="email"], input[type="password"], input[type="date"] {
+        width: 100%;
+        padding: 10px;
+        margin: 5px 0 15px 0;
+        border: 1px solid #ced4da;
+        border-radius: 15px; /* More rounded corners */
+        font-size: 16px;}
+
+    
+    .submit-btn {width: 100%;
+        background-color: #764DE2;
+        color: #FEFDE9;
+        padding: 12px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 18px;
+        font-weight: bold;
+        font-family: "Comic Sans MS", "Lucida Handwriting", cursive;}
+
+
+    .submit-btn:hover {background-color: #218838;}
+	
+</style>
+</head>
+<body>
+
+  
+    <div id="logo-container">
+        <img src="images/logo.png" alt="Logo" style="height: px;">
+    </div>
+
+ 
+    <div id="navbar">
+        <a href="home.html" class="nav-link">Home</a>
+        <a href="events.html" class="nav-link">Events</a>
+        <a href="register.html" class="nav-link">Register</a>
+    </div>
+
+    
+    <div id="register-container">	
+        <h2>Join us today!</h2>
+        <form action="/register" method="POST">
+            <label for="username">Username</label>
+            <input type="text" id="username" name="username" required>
+
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="password">Password</label>
+            <input type="password" id="password" name="password" required>
+
+            <label for="confirm_password">Confirm Password</label>
+            <input type="password" id="confirm_password" name="confirm_password" required>
+
+            <label for="dob">Date of Birth</label>
+            <input type="date" id="dob" name="dob" required>
+
+            <!-- Class selector for the submit button -->
+            <input type="submit" class="submit-btn" value="Register">
+        </form>
+    </div>
+
+</body>
+</html>

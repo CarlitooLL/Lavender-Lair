@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LL : Home</title>
+    <style>
+        
+        html, body {
+            height: 100%;
+            margin: 0;
+            overflow-x: hidden;
+        }
+
+        body {
+            font-family: "Comic Sans MS", "Lucida Handwriting", cursive;
+            background-image: url('images/background.png');
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+
+        #logo-container {
+            margin: 20px 0;
+        }
+
+        #navbar {
+            background-color: #764DE2;
+            overflow: hidden;
+            padding: 10px 0;
+            display: inline-block;
+            border-radius: 30px;
+            text-align: center;
+            width: 90%;
+            max-width: 1200px; 
+            margin: 0 auto; 
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .nav-link {
+            display: inline-block;
+            color: #FEFDE9;
+            text-align: center;
+            padding: 10px 120px;
+            text-decoration: none;
+            font-size: 18px;
+            margin: 0 10px;
+        }
+
+        .nav-link:hover {
+            background-color: rgba(0, 86, 179, 0.9);
+            color: #ffffff;
+            border-radius: 20px;
+        }
+
+        #hero {
+            background-color: rgba(255, 255, 255, 0.9);
+            padding: 50px 20px;
+            border-radius: 8px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            margin: 20px auto;
+            max-width: 800px;
+            min-height: 300px;
+        }
+
+        h1 {
+            color: #333;
+            font-size: 36px;
+            margin: 0;
+        }
+
+        p {
+            color: #495057;
+            font-size: 18px;
+            margin: 20px 0;
+        }
+
+        .btn {
+            display: inline-block;
+            background-color: #764DE2;
+            color: #FEFDE9;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 5px;
+            text-decoration: none;
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        .btn:hover {
+            background-color: #5a3caa;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Logo container above navbar -->
+    <div id="logo-container">
+        <img src="images/logo.png" alt="Logo" style="height: px;">
+    </div>
+
+    <!-- Navbar -->
+    <div id="navbar">
+        <a href="home.html" class="nav-link">Home</a>
+        <a href="events.html" class="nav-link">Events</a>
+        <a href="register.html" class="nav-link">Register</a>
+    </div>
+
+    <!-- Hero section -->
+    <div id="hero">
+        <h1>Who are we?</h1>
+        <img src="images/us.jpg" alt="us" style="height: 800px;">
+        <p>The Lavender Lair is a Community Discord server filled with people of many backgrounds.<br>
+            It is a place where everyone can all hang out and be friends and play together!
+            <br> The Lavender Lair is Owned by Carlitoo and is Ran by him and his circle of friends.</p>
+        <a href="register.html" class="btn">Join us!</a>
+    </div>
+
+</body>
+</html>
