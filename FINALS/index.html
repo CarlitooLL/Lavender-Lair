@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lavender Lair</title>
+	<link rel="icon" href="imgs/icon.png" type="image/x-icon">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Press Start 2P', cursive;
+            background: url('imgs/homebg.png') no-repeat center center fixed;
+            background-size: cover;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            flex-direction: column;
+            padding-bottom: 100px; /* Increased bottom padding for more space */
+        }
+
+        .container {
+            display: grid;
+            grid-template-rows: repeat(3, 1fr);
+            grid-template-columns: repeat(5, 1fr) 350px; /* 5 columns for tiles, last column for iframe */
+            gap: 30px;  /* Increased gap */
+            width: 90%;
+            max-width: 1200px;
+            position: relative;
+            top: 0%;
+        }
+
+        /* Logo styling - Increased size */
+        .logo {
+            grid-area: 1 / 1 / 2 / 2; /* First column, top row */
+            text-align: left;
+        }
+
+        .logo img {
+            width: 250px;  /* Increased logo size */
+            border-radius: 15px; /* Added rounded corners */
+        }
+
+        /* Tile styling */
+        .tile {
+            position: relative;
+            background-size: 90% 90%;  /* Set to 90% to make the image smaller on the edges */
+            background-position: center;  /* Ensure the background image is centered */
+            background-repeat: no-repeat;  /* Prevents image repetition */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 20px;  /* Rounded corners for the tile */
+            padding: 30px;
+            box-shadow: 3px 3px 12px rgba(0, 0, 0, 0.3);  /* Increased shadow */
+            border: 10px solid transparent; /* Add border to create frame effect */
+            background-color: #99d995; /* Tile color for the frame */
+        }
+
+        /* Add transparent images to the tiles using ::before */
+        .tile::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            opacity: 0.5; /* Adjust the opacity to make the image transparent */
+            border-radius: 20px;
+            z-index: 1;  /* Ensures the image is behind the text */
+        }
+
+        .join {
+            grid-area: 2 / 1 / 4 / 2; /* Left column, spans two rows */
+            background-image: url('imgs/fields2.png'); /* Background image for Join button */
+            background-color: #cebbfb; /* Set the color of the Join tile */
+        }
+
+        .about {
+            grid-area: 2 / 2 / 3 / 5; /* Second column, wide */
+            background-image: url('imgs/mp.gif'); /* Background image for About button */
+        }
+
+        .events {
+            grid-area: 2 / 5 / 3 / 6; /* Second column, box shape */
+            background-image: url('imgs/mp.gif'); /* Background image for Events button */
+        }
+
+        .members {
+            grid-area: 3 / 2 / 4 / 6; /* Bottom row, wide rectangle */
+            background-image: url('imgs/mp.gif'); /* Background image for Members button */
+        }
+
+        /* Discord widget styling */
+        .discord-widget {
+            grid-area: 2 / 6 / 4 / 7; /* Align the widget with the join button and make it span two rows */
+            background-image: url('imgs/discord-bg.jpg'); /* Background image for Discord widget */
+            background-size: 80% 80%; /* Shrink the background image to create a frame effect */
+            background-position: center;
+            background-repeat: no-repeat;
+            background-color: rgba(44, 47, 51, 0.7); /* Transparent background for Discord widget */
+            border-radius: 15px; /* Rounded corners for image */
+        }
+
+        iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+            border-radius: 15px; /* Match the style of buttons */
+        }
+
+        /* Text inside tiles */
+        .tile h2 {
+            font-size: 2rem;  /* Increased font size */
+            color: #ffeabe;  /* Text color changed to yellow */
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.6);
+            position: relative;
+            z-index: 2;  /* Ensure text stays on top of background image */
+        }
+
+        /* Remove underline from anchor tags */
+        a {
+            text-decoration: none; /* Remove blue underline */
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                grid-template-rows: auto;
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+
+            .logo {
+                grid-area: auto;
+                text-align: center;
+            }
+
+            .tile {
+                grid-area: auto;
+            }
+
+            /* Adjust the Discord widget for small screens */
+            .discord-widget {
+                grid-area: auto;
+                width: 100%;
+                height: 300px; /* Smaller height for smaller screens */
+            }
+        }
+    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <div class="logo">
+            <img src="imgs/LL Logo.png" alt="Lavender Lair Logo">
+        </div>
+        <a href="https://discord.gg/m526yz2Kj8" class="join tile">
+            <h2>Join</h2>
+        </a>
+        <a href="about.html" class="about tile">
+            <h2>About</h2>
+        </a>
+        <a href="events.html" class="events tile">
+            <h2>Events</h2>
+        </a>
+        <a href="members.html" class="members tile">
+            <h2>Member Profiles</h2>
+        </a>
+        <!-- Discord Widget -->
+        <div class="discord-widget">
+            <iframe src="https://discord.com/widget?id=1066752849867972648&theme=dark" width="350" height="400" allowtransparency="true" frameborder="0" sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"></iframe>
+        </div>
+    </div>
+</body>
+</html>
