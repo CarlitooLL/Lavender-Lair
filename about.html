@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - Lavender Lair</title>
+    <link rel="icon" href="imgs/icon.png" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <style>
+        /* --- 1. BASE STYLES --- */
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Press Start 2P', cursive;
+            background: url('imgs/homebg.png') no-repeat center center fixed;
+            background-size: cover;
+            color: #fff;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* --- 2. HEADER & BANNER --- */
+        .header-banner {
+            position: relative;
+            width: 100%;
+            height: 350px;
+            background: linear-gradient(rgba(255, 255, 255, 0.6), rgba(119, 119, 119, 0.6)), url('imgs/about-banner.jpg');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            border-bottom: 8px solid #99d995;
+        }
+
+        .header-banner img {
+            width: 320px;
+            filter: drop-shadow(4px 4px 0px #000);
+            transition: transform 0.3s;
+        }
+
+        .header-banner img:hover { transform: scale(1.05); }
+
+        .tagline {
+            margin-top: 20px;
+            font-size: 0.8rem;
+            color: #edc953;
+            text-shadow: 3px 3px 0px #000;
+            background: rgba(0,0,0,0.5);
+            padding: 10px 20px;
+            border: 2px solid #b19cd9;
+        }
+
+        /* --- 3. STATS BAR --- */
+        .stats-bar {
+            display: flex;
+            justify-content: center;
+            gap: 50px;
+            background: rgba(177, 156, 217, 0.9);
+            padding: 25px;
+            border-bottom: 6px solid #99d995;
+            box-shadow: 0 10px 0px rgba(0,0,0,0.2);
+        }
+
+        .stat-item { text-align: center; }
+        .stat-num { display: block; font-size: 1.2rem; color: #ffffff; margin-bottom: 5px; }
+        .stat-label { font-size: 0.6rem; color: #2c2f33; }
+
+        /* --- 4. CONTENT SECTIONS --- */
+        .main-container {
+            max-width: 1100px;
+            margin: 50px auto;
+            padding: 0 20px;
+        }
+
+        .section {
+            display: flex;
+            align-items: center;
+            gap: 40px;
+            margin-bottom: 80px;
+            background: rgba(44, 47, 51, 0.85);
+            padding: 40px;
+            border: 6px solid #ada3da;
+            border-radius: 20px;
+            box-shadow: 8px 8px 0px rgba(0,0,0,0.4);
+        }
+
+        .section.reversed { flex-direction: row-reverse; border-color: #99d995; }
+
+        .image-box {
+            flex: 1;
+            text-align: center;
+        }
+
+        .image-box img {
+            width: 100%;
+            max-width: 400px;
+            border: 8px solid #fff;
+            border-radius: 15px;
+            box-shadow: 6px 6px 0px #000;
+            animation: float 4s ease-in-out infinite;
+        }
+
+        .text-box { flex: 1.5; }
+
+        .text-box h2 {
+            font-size: 1.5rem;
+            color: #99d995;
+            margin-bottom: 25px;
+            text-shadow: 2px 2px 0px #000;
+        }
+
+        .text-box p {
+            font-size: 0.85rem;
+            color: #e0e0e0;
+            line-height: 2;
+        }
+
+        /* --- 5. JOIN SECTION --- */
+        .cta-area {
+            text-align: center;
+            margin-bottom: 100px;
+        }
+
+        .join-btn {
+            display: inline-block;
+            background: #ada3da;
+            color: #ffffff;
+            padding: 25px 50px;
+            text-decoration: none;
+            font-size: 1.2rem;
+            border: 6px solid #99d995;
+            box-shadow: 8px 8px 0px #000;
+            transition: 0.2s;
+        }
+
+        .join-btn:hover {
+            transform: translate(-4px, -4px);
+            box-shadow: 12px 12px 0px #b19cd9;
+            background: #fff;
+        }
+
+        /* --- ANIMATIONS --- */
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-15px); }
+        }
+
+        /* --- MOBILE RESPONSIVE --- */
+        @media (max-width: 900px) {
+            .section, .section.reversed { flex-direction: column; text-align: center; padding: 20px; }
+            .stats-bar { flex-direction: column; gap: 20px; }
+            .header-banner img { width: 250px; }
+            .join-btn { font-size: 0.8rem; width: 80%; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="header-banner">
+        <a href="index.html">
+            <img src="imgs/about.png" alt="About Lavender Lair">
+        </a>
+        <div class="tagline">A fun community, just a click away!</div>
+    </div>
+
+    <div class="stats-bar">
+        <div class="stat-item">
+            <span class="stat-num">100+</span>
+            <span class="stat-label">COMMUNITY MEMBERS</span>
+        </div>
+        <div class="stat-item">
+            <span class="stat-num">24/7</span>
+            <span class="stat-label">ACTIVE VOICE</span>
+        </div>
+        <div class="stat-item">
+            <span class="stat-num">∞</span>
+            <span class="stat-label">SAFE VIBES</span>
+        </div>
+    </div>
+
+    <div class="main-container">
+        
+        <div class="section">
+            <div class="image-box">
+                <img src="imgs/collage.jpg" alt="Lair Collage">
+            </div>
+            <div class="text-box">
+                <h2>> WHO_WE_ARE</h2>
+                <p>
+                    Welcome to <strong>Lavender Lair</strong>, the ultimate haven for chronically online gamers! We’ve built a cozy corner of the internet where socialization meets high-score hunting. 
+                </p>
+                <p>
+                    Whether you're looking for a tactical squad or just a late-night chat about your favorite lore, our doors are always open. We won't bite—unless we're playing zombies. :)
+                </p>
+            </div>
+        </div>
+
+        <div class="section reversed">
+            <div class="image-box">
+                <img src="imgs/games.png" alt="Gaming Icons">
+            </div>
+            <div class="text-box">
+                <h2>> THINGS_WE_DO</h2>
+                <p>
+                    From the high-stakes rounds of <strong>VALORANT</strong> and <strong>League</strong> to the cozy worlds of <strong>Roblox</strong> and <strong>Hoyoverse</strong>, we play it all. 
+                </p>
+                <p>
+                    Feeling adventurous? We host weekly movie nights, competitive tournaments with prizes, and spontaneous community events. At the Lair, boredom is the only enemy we haven't defeated yet!
+                </p>
+            </div>
+        </div>
+
+        <div class="cta-area">
+            <a href="https://discord.gg/yourlink" class="join-btn">START</a>
+            <p style="margin-top: 30px; font-size: 0.6rem; color: #100b18;">press START to join our discord!</p>
+        </div>
+
+    </div>
+
+</body>
+</html>

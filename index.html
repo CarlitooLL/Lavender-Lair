@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lavender Lair</title>
+    <link rel="icon" href="imgs/icon.png" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <style>
+    /* --- LOADING SCREEN STYLES --- */
+    #loader {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: #2c2f33; 
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        z-index: 9999; 
+        transition: opacity 0.5s ease;
+    }
+
+    .loading-text {
+        color: #ffeabe; 
+        font-size: 1.2rem;
+        margin-bottom: 20px;
+        animation: blink 0.8s infinite;
+    }
+
+    .progress-container {
+        width: 300px;
+        height: 30px;
+        border: 6px solid #99d995; 
+        padding: 4px;
+        background-color: rgba(0, 0, 0, 0.2); 
+    }
+
+    .progress-fill {
+        height: 100%;
+        background-color: #b19cd9; 
+        width: 0%;
+        animation: fillProgress 1s steps(5) forwards;
+    }
+
+    @keyframes fillProgress { to { width: 100%; } }
+    @keyframes blink { 50% { opacity: 0; } }
+
+    body {
+        margin: 0;
+        padding: 0;
+        font-family: 'Press Start 2P', cursive;
+        background: url('imgs/homebg.png') no-repeat center center fixed;
+        background-size: cover;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        flex-direction: column;
+        padding-bottom: 100px;
+    }
+
+    .container {
+        display: grid;
+        grid-template-rows: repeat(3, 1fr);
+        grid-template-columns: repeat(5, 1fr) 350px; 
+        gap: 30px;
+        width: 90%;
+        max-width: 1200px;
+        position: relative;
+    }
+
+    .logo { grid-area: 1 / 1 / 2 / 2; text-align: left; }
+    .logo img { width: 250px; border-radius: 15px; }
+
+    .tile {
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 20px; 
+        box-shadow: 3px 3px 12px rgba(0, 0, 0, 0.3);
+        background-color: #99d995; 
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover; 
+        overflow: hidden; 
+        border: 12px solid #99d995; 
+        transition: transform 0.2s ease-in-out, filter 0.1s ease;
+        cursor: pointer;
+    }
+
+    @keyframes pulse {
+        0% { transform: scale(1); }
+        50% { transform: scale(1.04); }
+        100% { transform: scale(1); }
+    }
+
+    .tile:hover {
+        animation: pulse 0.6s infinite ease-in-out;
+        z-index: 10;
+    }
+
+    .tile:active {
+        animation: none;
+        transform: scale(0.95);
+        filter: brightness(0.8);
+    }
+
+    .join { grid-area: 2 / 1 / 4 / 2; background-image: url('imgs/join.png'); }
+    .about { grid-area: 2 / 2 / 3 / 4; background-image: url('imgs/abouticon.png'); }
+    .events { grid-area: 2 / 4 / 3 / 6; background-image: url('imgs/eventsicon.png'); }
+    .members { grid-area: 3 / 2 / 4 / 6; background-image: url('imgs/mp.gif'); }
+
+    .discord-widget {
+        grid-area: 2 / 6 / 4 / 7;
+        background-image: url('imgs/discord-bg.jpg');
+        background-size: cover;
+        background-position: center;
+        background-color: rgba(44, 47, 51, 0.7);
+        border-radius: 15px;
+        overflow: hidden;
+    }
+
+    iframe { width: 100%; height: 100%; border: none; }
+
+    .tile h2 {
+        font-size: 1.5rem;
+        color: #ffeabe;
+        text-shadow: 3px 3px 0px rgba(0, 0, 0, 0.8);
+        position: relative;
+        z-index: 2;
+    }
+
+    a { text-decoration: none; }
+
+    @media (max-width: 1024px) {
+        .container { grid-template-columns: 1fr 1fr; grid-template-rows: auto; }
+        .discord-widget { grid-area: auto; width: 100%; height: 400px; }
+    }
+</style>
+</head>
+<body>
+
+    <div id="loader">
+        <div class="loading-text">NOW LOADING...</div>
+        <div class="progress-container">
+            <div class="progress-fill"></div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="logo">
+            <img src="imgs/LL Logo.png" alt="Lavender Lair Logo">
+        </div>
+        
+        <a href="https://discord.gg/m526yz2Kj8" class="join tile">
+            <h2>Join</h2>
+        </a>
+        
+        <a href="about.html" class="about tile">
+            <h2>About</h2>
+        </a>
+        
+        <a href="events.html" class="events tile">
+            <h2>Events</h2>
+        </a>
+        
+        <a href="members.html" class="members tile">
+            <h2>Member Profiles</h2>
+        </a>
+
+        <div class="discord-widget">
+            <iframe src="https://discord.com/widget?id=1066752849867972648&theme=dark" allowtransparency="true" frameborder="0" sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"></iframe>
+        </div>
+    </div>
+
+    <script>
+        window.addEventListener('load', function() {
+            const loader = document.getElementById('loader');
+            setTimeout(() => {
+                loader.style.opacity = '0';
+                setTimeout(() => {
+                    loader.style.display = 'none';
+                }, 500); 
+            }, 2200); 
+        });
+    </script>
+
+</body>
+</html>
